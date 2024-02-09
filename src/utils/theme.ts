@@ -21,7 +21,7 @@ const theme = {
   font: {
     weigth: {
       regular: 400,
-      semi_bold: 600,
+      semi_bold: 500,
       bold: 700,
     },
     sizes: {
