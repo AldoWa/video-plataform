@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-export const Button = styled.button<{ bg: 'transparent' | 'green'}>`
+export const Content = styled.button<{ bg: 'transparent' | 'green'}>`
   ${({ bg, theme }) => css`
     background-color: ${bg === 'green' ? 'green' : 'transparent'};
     height: 3.5rem;
