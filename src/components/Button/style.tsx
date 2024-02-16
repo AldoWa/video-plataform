@@ -20,6 +20,7 @@ export const Button = styled.button<{ bg: 'transparent' | 'green'}>`
       }
       font-size: 1.25rem;
     }
+    text-transform: uppercase;
     &:hover {
       background-color: ${bg === 'green' ? theme.color.product.green_dark : theme.color.product.blue};
       transition: background-color 0.3s ease-in-out;
