@@ -5,20 +5,52 @@ interface Props {
   type: "released" | "blocked";
 }
 
+interface WrapperProps {
+  selected?: boolean;
+}
+
 export const Container = styled.div``
 
-export const Wrapper = styled.button`
-  ${({ theme }) => css`
+export const Wrapper = styled.button<WrapperProps>`
+  ${({ theme, selected }) => css`
     display: flex;
     flex-direction: column;
     width: 100%;
     border: 1px solid ${theme.color.base.stroke_divider};
     padding: ${rem(16)};
-
+    
     &:hover {
       border-color: ${theme.color.product.green};
       transition: border-color 0.3s ease-in-out;
     }
+    ${selected && css`
+      background-color: ${ theme.color.product.green };
+      ${Text} {
+        color: ${theme.color.base.white};
+        & svg path {
+          stroke: ${theme.color.base.white};
+        }
+      }
+      ${Type} {
+        color: ${theme.color.base.white};
+        border-color: ${theme.color.base.white};
+      }
+      ${Title} {
+        color: ${theme.color.base.white};
+      }
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        border-bottom: 14px solid transparent;
+        border-left: 14px solid transparent;
+        border-right: 14px solid ${theme.color.product.green};
+        border-top: 14px solid transparent;
+        left: -27px;
+        top: 50%; 
+        transform: translateY(-50%);
+      }
+    `}
     border-radius: ${rem(4)};
   `}
 `

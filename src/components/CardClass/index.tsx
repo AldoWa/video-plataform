@@ -3,7 +3,6 @@ import Jail from '@/assets/icons/jail.svg'
 import Check from '@/assets/icons/check.svg'
 
 interface CardClassProps  {
-  isSelected?: boolean;
   isReleased: boolean;
   title: string;
 }
