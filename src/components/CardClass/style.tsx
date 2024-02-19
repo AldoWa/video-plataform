@@ -78,6 +78,7 @@ export const Title = styled.p`
     margin-top: ${rem(16)};
     font-weight: ${theme.font.weigth.bold};
     color: ${theme.color.base.text};
+    text-align: start;
   `}
 `
 

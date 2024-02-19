@@ -10,7 +10,11 @@ export const Title = styled.h1`
 ` 
 
 export const Wrapper = styled.aside`
-  padding: ${rem(24)};
+  ${({ theme }) => css`
+    padding: ${rem(24)};
+    background-color: ${theme.color.base.elements};
+    min-width: 348px;
+  `}
 `
 
 export const List = styled.ul`
