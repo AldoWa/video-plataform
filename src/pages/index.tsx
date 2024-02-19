@@ -5,6 +5,7 @@ import { Roboto } from "next/font/google";
 import Classes from "@/components/Classes";
 import Video from "@/components/Video";
 import { Class } from "@/types";
+import { formatDate } from "@/utils/date";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ['400', '500', '700'] });
 
@@ -35,6 +36,7 @@ export default function Home({ classes }: { classes: Class[] }) {
 export const getServerSideProps = async () => {
   const objFetch = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/classes`)
   const data = await objFetch.json()
+
   return {
     props: {
       classes: data.classes
