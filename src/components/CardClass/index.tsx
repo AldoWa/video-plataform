@@ -8,7 +8,7 @@ interface CardClassProps  {
   selected?: boolean;
   handleChangeClass: (id: string) => void;
   id: string;
-  date: string;
+  formtedDate: string;
 }
 
 const Relesead = () => {
@@ -27,11 +27,11 @@ const Blocked = () => {
   )
 }
 
-const CardClass = ({ isReleased, title, handleChangeClass, id, date, selected = false }: CardClassProps ) => {
+const CardClass = ({ isReleased, title, handleChangeClass, id, formtedDate, selected = false }: CardClassProps ) => {
   const type = isReleased ? 'released' : 'blocked'
   return (
     <Container>
-      <Data>{date}</Data>
+      <Data>{formtedDate}</Data>
       <Wrapper selected={selected} disabled={!isReleased} onClick={() => handleChangeClass(id)}>
         <div className="flex justify-between items-center w-full">
           { isReleased ? <Relesead /> : <Blocked /> }

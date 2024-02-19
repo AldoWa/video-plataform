@@ -15,10 +15,10 @@ const Classes = ({ classes, handleChangeClass, actualClassId }: ClassesProps) =>
       <Title>Aulas</Title>
       <Diviser />
       <List>
-        { classes.map((item, index) => (
+        { classes.map((item) => (
           <li key={item.id}>
             <CardClass 
-              date={formatDate(item.date)}
+              formtedDate={formatDate(item.date)}
               isReleased={compareDateToNow(item.date)}
               title={item.title}
               selected={actualClassId === item.id}
