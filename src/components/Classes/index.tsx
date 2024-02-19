@@ -1,37 +1,30 @@
+import { Class } from "@/types";
 import CardClass from "../CardClass";
 import { Diviser, List, Title, Wrapper } from "./style";
 
-const Classes = () => {
+interface ClassesProps {
+  classes: Class[];
+  handleChangeClass: (id: string) => void;
+  actualClassId: string;
+}
+
+const Classes = ({ classes, handleChangeClass, actualClassId }: ClassesProps) => {
   return (
     <Wrapper>
       <Title>Aulas</Title>
       <Diviser />
       <List>
-        <li>
-          <CardClass 
-            isReleased={true}
-            title="Criando o projeto e realizando o setup inicial"
-            selected
-          />
-        </li>
-        <li>
-          <CardClass 
-            isReleased={false}
-            title="Criando o projeto e realizando o setup inicial"
-          />
-        </li>
-        <li>
-          <CardClass 
-            isReleased={false}
-            title="Criando o projeto e realizando o setup inicial"
-          />
-        </li>
-        <li>
-          <CardClass 
-            isReleased={false}
-            title="Criando o projeto e realizando o setup inicial"
-          />
-        </li>
+        { classes.map((item, index) => (
+          <li key={item.id}>
+            <CardClass 
+              isReleased={true}
+              title={item.title}
+              selected={actualClassId === item.id}
+              handleChangeClass={handleChangeClass}
+              id={item.id}
+            />
+          </li>
+        ))}
       </List>
     </Wrapper>
   );

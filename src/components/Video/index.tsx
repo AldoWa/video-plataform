@@ -6,7 +6,11 @@ import Button from "../Button";
 import Discord from "@/assets/icons/discord.svg";
 import Zap from "@/assets/icons/zap.svg";
 
-const VideoClass = () => {
+type VideoClassProps = VideoDetailsProps & {
+  link: string;
+}
+
+const VideoClass = ({ details, link, title }: VideoClassProps) => {
   const [hasWindow, setHasWindow] = useState(false);
 
   useEffect(() => {
@@ -19,30 +23,34 @@ const VideoClass = () => {
     <div className="w-full">
       { hasWindow && 
         <ReactPlayer
-          url={'https://www.youtube.com/watch?v=LXb3EKWsInQ'}
+          url={link}
           width='100%'
           height='700px'
           controls={true}
         ></ReactPlayer>
       }
-      <VideoDetails />
+      <VideoDetails 
+        details={details}
+        title={title}
+      />
     </div>
   )
 }
 
-const VideoDetails = () => {
+type VideoDetailsProps = {
+  title: string;
+  details: string;
+}
+
+const VideoDetails = ({ details, title }: VideoDetailsProps) => {
   return (
     <WrapperVideoDetails>
-      <div>
+      <div className="w-full">
         <TitleVideo>
-          Aula 01 - Criando o projeto e realizando o setup inicial
+          { title }
         </TitleVideo>
         <DetailsVideo>
-          Nessa aula vamos dar início ao 
-          projeto criando a estrutura base da aplicação utilizando ReactJS, 
-          Vite e TailwindCSS. 
-          Vamos também realizar o setup do nosso projeto no GraphCMS criando as entidades da aplicação e 
-          integrando a API GraphQL gerada pela plataforma no nosso front-end utilizando Apollo Client.
+          { details }
         </DetailsVideo>
       </div>
       <WrapperButtonDetails>

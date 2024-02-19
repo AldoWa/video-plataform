@@ -24,6 +24,16 @@ export const Wrapper = styled.button<WrapperProps>`
       cursor: pointer;
       &:hover {
         background-color: ${theme.color.product.green_light};
+        ${Title} {
+          color: ${theme.color.base.white};
+        }
+        ${Text} {
+          color: ${theme.color.base.white};
+        }
+        ${Type} {
+          color: ${theme.color.base.white};
+          border-color: ${theme.color.base.white};
+        }
         &::after {
           border-right: 14px solid ${theme.color.product.green_light};
         }

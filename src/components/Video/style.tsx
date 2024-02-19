@@ -15,6 +15,7 @@ export const DetailsVideo = styled.p`
     font-weight: ${theme.font.weigth.regular};
     font-size: ${theme.font.sizes[16]};
     line-height: 160%;
+    margin-top: ${rem(16)};
   `}
 `
 
