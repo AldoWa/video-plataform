@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 export const Content = styled.button<{ bg: 'transparent' | 'green'}>`
   ${({ bg, theme }) => css`
-    background-color: ${bg === 'green' ? 'green' : 'transparent'};
+    background-color: ${bg === 'green' ? theme.color.product.green : 'transparent'};
     height: 3.5rem;
     display: flex;
     align-items: center;
