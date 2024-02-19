@@ -7,22 +7,28 @@ interface Props {
 
 interface WrapperProps {
   selected?: boolean;
+  disabled?: boolean;
 }
 
 export const Container = styled.div``
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, selected }) => css`
+  ${({ theme, selected, disabled }) => css`
     display: flex;
     flex-direction: column;
     width: 100%;
     border: 1px solid ${theme.color.base.stroke_divider};
     padding: ${rem(16)};
-    
-    &:hover {
-      border-color: ${theme.color.product.green};
-      transition: border-color 0.3s ease-in-out;
-    }
+    cursor: initial;
+    ${!disabled && css`
+      cursor: pointer;
+      &:hover {
+        background-color: ${theme.color.product.green_light};
+        &::after {
+          border-right: 14px solid ${theme.color.product.green_light};
+        }
+      }
+    `}
     ${selected && css`
       background-color: ${ theme.color.product.green };
       ${Text} {

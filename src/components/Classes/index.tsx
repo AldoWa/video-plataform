@@ -11,6 +11,7 @@ const Classes = () => {
           <CardClass 
             isReleased={true}
             title="Criando o projeto e realizando o setup inicial"
+            selected
           />
         </li>
         <li>
