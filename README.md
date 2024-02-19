@@ -1,16 +1,14 @@
+# Título do Projeto
+Video Plataform: A simple aplication to use Next + Styled components
 
 ## Screenshots
 
 ![App Screenshot](https://i.ibb.co/7trYqcf/image.png)
 
 
-# Título do Projeto
-A simple aplication to use Next + Styled components
-
 ## Stack utilizada
 
 **Front-end:** Next, Styled-Components, TailwindCSS
-
 
 
 ## Rodando localmente
