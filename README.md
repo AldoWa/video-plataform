@@ -1,5 +1,5 @@
 # Título do Projeto
-Video Plataform: A simple aplication to use Next + Styled components
+Video Plataform: Uma aplicação simples utilizando Next + Styled components
 
 ## Screenshots
 
